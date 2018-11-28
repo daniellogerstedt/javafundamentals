@@ -14,7 +14,7 @@ public class LibraryTest {
         int[] testTrue = new int[] {2, 2};
         int[] testFalse = new int[] {1, 2};
         assertTrue("duplicates should return true if the array contains a duplicate", classUnderTest.duplicates(testTrue));
-        assertFalse("duplicates should return true if the array contains a duplicate", classUnderTest.duplicates(testFalse));
+        assertFalse("duplicates should return false if the array contains no duplicates", classUnderTest.duplicates(testFalse));
     }
     @Test public void testAverageValue() {
         Library classUnderTest = new Library();
