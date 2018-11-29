@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.concurrent.ThreadLocalRandom;
 
 /*
@@ -82,5 +85,63 @@ public class Library {
 
     public static int rollDSix () {
         return ThreadLocalRandom.current().nextInt(1, 7);
+    }
+
+    /*
+     * Method builds and prints out a list of highest temp, lowest temp, and temps not seen when given a matrix of weather data
+     */
+    public static HashSet<Integer> analyzeWeather (int[][] weather) {
+        HashSet<Integer> weatherData = new HashSet<>();
+        for (int i = 0; i < weather.length; i++) {
+            for (int j = 0; j < weather[i].length; j++) {
+                weatherData.add(weather[i][j]);
+            }
+        }
+        return weatherData;
+    }
+
+    public static int maxTemp (HashSet<Integer> weatherData) {
+        int max = -1000;
+        for (int temp : weatherData) {
+            if (temp > max) max = temp;
+        }
+        return max;
+    }
+
+    public static int minTemp (HashSet<Integer> weatherData) {
+        int min = 1000;
+        for (int temp : weatherData) {
+            if (temp < min) min = temp;
+        }
+        return min;
+    }
+
+    public static StringBuffer notSeenTemps (HashSet<Integer> weatherData, int min, int max) {
+        StringBuffer missingTemps = new StringBuffer();
+        for (int r = min + 1; r < max; r++) {
+            if (!weatherData.contains(r)) {
+                missingTemps.append("Never Saw Temp: " + r + "\n");
+            }
+        }
+        return missingTemps;
+    }
+
+    public static String tally (ArrayList<String> votes) {
+        String winner = "No One";
+        int highestNumberOfVotes = -1;
+        HashMap<String, Integer> voteCount = new HashMap<>();
+        for (String person : votes) {
+            if (!voteCount.containsKey(person)) voteCount.put(person, 1);
+            else voteCount.put(person, voteCount.get(person) + 1);
+        }
+        for (String person : voteCount.keySet()) {
+            int count = voteCount.get(person);
+            if (count > highestNumberOfVotes) {
+                highestNumberOfVotes = count;
+                winner = person;
+            }
+        }
+
+        return winner + "received the most votes!";
     }
 }
