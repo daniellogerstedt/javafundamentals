@@ -7,24 +7,18 @@ import java.nio.file.FileSystems;
 import java.util.Arrays;
 
 public class Bitmap {
-    Buffer allData;
-    Buffer pixelArray;
-    Buffer colorTable;
-    Buffer pixelArrayOffset;
-    Buffer imageWidth;
-    Buffer imageHeight;
-    Buffer compression;
-    Buffer bitsPerPixel;
+    BufferedImage image;
+    int height;
+    int width;
+
 
     public Bitmap(String file) {
         try {
-            BufferedImage image = ImageIO.read(FileSystems.getDefault().getPath("resources/bitmap.bmp").toFile());
-            int[] colorTable = new int[image.getHeight()*image.getWidth()];
-            System.out.println(Arrays.toString(image.getRGB(0, 0, 100, 100, colorTable, 0, 1)));
-            Color temp = new Color(image.getRGB(0, 0), true);
-            System.out.println(temp.getRed());
-            System.out.println(temp.getGreen());
-            System.out.println(temp.getBlue());
+            image = ImageIO.read(FileSystems.getDefault().getPath("resources/bitmap.bmp").toFile());
+            height = image.getHeight();
+            width = image.getWidth();
+//            System.out.println(Arrays.toString(image.getRGB(0, 0, 100, 100, colorTable, 0, 1)));
+//            Color color = new Color(image.getRGB(0, 0), true);
 
         } catch (IOException e) {
             e.printStackTrace();

@@ -22,7 +22,7 @@ public class Library {
     }
 
     /*
-     * This method checks for any duplicates in an integer array passed into it.
+     * This method checks for any containsDuplicates in an integer array passed into it.
      * It does this by passing the provided array into a nested for loop that compares each index to all other indexes.
      * For the sake of optimization it uses a third variable to move the starting point of the inside loop as it progresses.
      * This eliminates the duplicate checks against the previously checked indexes decreasing the Time used.
@@ -32,7 +32,7 @@ public class Library {
      * so the inside loop when checking the second index can begin at the third instead of itself or the first.
      */
 
-    public static boolean duplicates(int[] toBeChecked) {
+    public static boolean containsDuplicates(int[] toBeChecked) {
         int start = 0;
         for (int i = 0; i < toBeChecked.length; i++) {
             for (int j = 1 + start; j < toBeChecked.length; j++) {
