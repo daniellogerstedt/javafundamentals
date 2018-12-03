@@ -15,7 +15,7 @@ public class App {
             String currentLine = fileReader.readLine();
             int line = 1;
             while (currentLine != null) {
-                if (App.checkLine(currentLine)) errors.append("Error on line: " + line + "\n");
+                if (App.checkLine(currentLine)) errors.append("Line " + line + ": Missing semicolon.\n");
                 currentLine = fileReader.readLine();
                 line++;
             }

@@ -37,13 +37,13 @@ public class AppTest {
 
     @Test public void testCheckFile_OneError() {
         App.main(new String[]{"resources/oneError.js"});
-        assertEquals("should print nothing to System.out", "Error on line: 3\n\n", outContent.toString());
+        assertEquals("should print nothing to System.out", "Line 3: Missing semicolon.\n\n", outContent.toString());
     }
 
 
     @Test public void testCheckFile_ManyErrors() {
         App.main(new String[]{"resources/manyErrors.js"});
-        assertEquals("should print nothing to System.out", "Error on line: 3\nError on line: 22\nError on line: 40\nError on line: 53\nError on line: 54\n\n", outContent.toString());
+        assertEquals("should print nothing to System.out", "Line 3: Missing semicolon.\nLine 22: Missing semicolon.\nLine 40: Missing semicolon.\nLine 53: Missing semicolon.\nLine 54: Missing semicolon.\n\n", outContent.toString());
     }
 
 
