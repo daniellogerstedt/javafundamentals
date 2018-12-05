@@ -48,9 +48,9 @@ public class RestaurantTest {
         Restaurant testRestaurant = new Restaurant("Test", 1);
         Restaurant testRestaurantTwo = new Restaurant("TestTwo", 2);
         Restaurant testRestaurantThree = new Restaurant("TestThree", 3);
-        assertEquals("Should return a String containing the name, stars, and price of a restaurant", "Restaurant: Test\nOverall Rating: 0 Stars\nPrice Range: $\n", testRestaurant.toString());
-        assertEquals("Should return a String containing the name, stars, and price of a restaurant", "Restaurant: TestTwo\nOverall Rating: 0 Stars\nPrice Range: $$\n", testRestaurantTwo.toString());
-        assertEquals("Should return a String containing the name, stars, and price of a restaurant", "Restaurant: TestThree\nOverall Rating: 0 Stars\nPrice Range: $$$\n", testRestaurantThree.toString());
+        assertEquals("Should return a String containing the name, stars, and price of a restaurant", "Restaurant: Test\nOverall Rating: 0 Stars\nPrice Range: $", testRestaurant.toString());
+        assertEquals("Should return a String containing the name, stars, and price of a restaurant", "Restaurant: TestTwo\nOverall Rating: 0 Stars\nPrice Range: $$", testRestaurantTwo.toString());
+        assertEquals("Should return a String containing the name, stars, and price of a restaurant", "Restaurant: TestThree\nOverall Rating: 0 Stars\nPrice Range: $$$", testRestaurantThree.toString());
     }
 
     @Test

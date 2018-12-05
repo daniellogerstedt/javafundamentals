@@ -30,7 +30,6 @@ public class Restaurant {
         for (int i = 0; i < this.priceRange; i++) {
             finalString += "$";
         }
-        finalString += "\n";
         return finalString;
     }
 
