@@ -1,14 +1,23 @@
 public class Review {
-    Restaurant restaurant;
-    String author;
-    String body;
-    int stars;
+    protected Restaurant restaurant;
+    protected String author;
+    protected String body;
+    protected int stars;
+    protected Movie movie;
 
     public Review(String author, String body, int stars, Restaurant restaurant) {
         this.restaurant = restaurant;
         this.author = author;
         this.body = body;
         this.stars = stars;
+    }
+
+    public Review(String author, String body, int stars, Restaurant restaurant, Movie movie) {
+        this.restaurant = restaurant;
+        this.author = author;
+        this.body = body;
+        this.stars = stars;
+        this.movie = movie;
     }
 
     public String toString() {
