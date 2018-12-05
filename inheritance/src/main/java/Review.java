@@ -13,7 +13,11 @@ public class Review {
 
     public String toString() {
         String finalString = "";
-        finalString += "Author: " + this.author + "\nRating: " + stars + "Stars\n\n" + body;
+        String starString;
+        if (this.stars == 1) starString = "Star"; else starString = "Stars";
+        finalString += "Author: " + this.author + "\nRating: " + stars + " " + starString + "\n\n" + body;
         return finalString;
     }
+
+
 }
