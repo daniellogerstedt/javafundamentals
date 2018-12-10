@@ -8,8 +8,21 @@ import java.util.Arrays;
 public class App {
     public static void main(String[] args) {
 
-        Bitmap brokenDown = new Bitmap("test");
-//        Transformation timeToFixIt = new Transformation(brokenDown);
+        Bitmap brokenDown = new Bitmap(args[0]);
+
+        switch (args[2].toLowerCase()) {
+            case ("greyscale") : brokenDown.greyScale();
+            break;
+            case ("negative") : brokenDown.negative();
+            break;
+            case ("rotatecolors") : brokenDown.rotateColors();
+            break;
+            case ("randomize") : brokenDown.randomize();
+            break;
+            case ("randomizestructured") : brokenDown.randomizeStructured();
+        }
+
+        brokenDown.writeBitmap(args[1]);
 
     }
 }
